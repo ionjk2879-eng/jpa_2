@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/posts")
-@RequiredArgsConstructor
+@RequiredArgsConstructor // 기본 생성자 생성
 public class PostController {
 
     private final PostService postService;
