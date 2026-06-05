@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Setter
 @Table(name = "posts")
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Post {
@@ -35,5 +37,9 @@ public class Post {
         post.content=content;
         post.author=author;
         return post;
+    }
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
